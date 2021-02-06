@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title> How to add firebase </title>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+
+
+    Welcome to registration page
+    <div id="num"></div>
+
+
+
+
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Masukkan Firebase di Sini
+        var firebaseConfig = {
+            apiKey: "AIzaSyCWqypwJTf-hNAu2csdtPvM3VKu4eZnQkI",
+            authDomain: "blaze-gaming-65773.firebaseapp.com",
+            databaseURL: "https://blaze-gaming-65773.firebaseio.com",
+            projectId: "blaze-gaming-65773",
+            storageBucket: "blaze-gaming-65773.appspot.com",
+            messagingSenderId: "181921936719",
+            appId: "1:181921936719:web:6cb6c989d0e6e18826413a",
+            measurementId: "G-QKJGMDL7HG"
+        };
+        // Copy paste saja
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        firebase.auth().onAuthStateChanged(function(user) {
+
+            if (!user) {
+
+                window.location.href = 'https://';
+
+
+            } else {
+                let phoneNumber = user.phoneNumber
+                console.log(phoneNumber)
+
+                document.querySelector("#num").innerHTML = `<h1>${phoneNumber}</h1>`;
+            }
+        });
+    </script>
+
+    <script src="phone_verify.js" type="text/javascript"></script>
+
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
